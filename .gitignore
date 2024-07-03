@@ -1,0 +1,28 @@
+# React Native
+node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+*.log
+*.lock
+
+# macOS
+.DS_Store
+
+# Android
+/android/.gradle
+/android/app/build
+
+# iOS
+/ios/Pods
+/ios/build
+
+# Docker
+*.dockerfile
