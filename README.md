@@ -1,73 +1,34 @@
 # Songbook
 Ephesians 5:18-21
 
-## Enviornment Setup
-If you have local dependency issues or want to follow the best coding practices:
+A free, offline songbook for church worship teams: lyrics, chord charts and PDFs,
+on every device, from a source the church controls.
 
-1.  Install Docker
+## The problem
+A church licenses songs (CCLI, OneLicense, direct permission) but has no reliable
+way to get them to its worship team. Posting them publicly gets them taken down,
+and no single platform carries every song a church sings.
 
-2.  Run these
-    ```bash
-    docker-compose build
-    docker-compose up
-    ```
+## How it works
+- **No central server.** Each church hosts its own encrypted bundle on static
+  hosting (GitHub Pages, Cloudflare R2, S3). The app never holds anyone's content.
+- **Join by link.** The admin shares a link whose URL fragment carries the key.
+  The app downloads the bundle, decrypts it on the device, and keeps it offline;
+  it works at camps with no signal.
+- **Updates on launch.** An encrypted manifest lists content-addressed files;
+  the app fetches only what changed.
+- **Admin publishing.** The church admin adds songs, PDFs, logo and defaults
+  from the same app and publishes a new bundle version.
+- **Optional device-bound access.** Each device holds its own keypair; the admin
+  approves devices and can revoke one by rotating the content key.
 
-3.  For ios:
-    ```bash
-    npx react-native run-ios
-    ```
-    For android:
-    ```bash
-    npx react-native run-android
-    ```
-    
-## Welcome to your Expo app 👋
+## Scope
+- Worship teams first.
+- Lyrics and chords in ChordPro, with transposition and chords on/off; PDFs.
+- A Progressive Web App: browser, Android, iOS and desktop from one codebase.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
-
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Licensing
+The app is a tool; each church is responsible for holding licenses for the songs
+it publishes. The app makes compliance the easy path: copyright notice and
+license number on every song, a license source per song (public domain, CCLI,
+OneLicense, permission), license expiry, and team-only content.
