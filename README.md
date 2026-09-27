@@ -35,6 +35,9 @@ them into ChordPro with Claude Code: a ready rulebook in [`porting/`](porting/),
 a checker that reads each song the way the app does, and what a real worship
 team learned doing it every week.
 
+A church keeps its licensed songs in its own private repository, which publishes
+only the encrypted bundle: see [A church's songs repository](docs/CHURCH-REPO.md).
+
 ## Scope
 - Worship teams first.
 - Lyrics and chords in ChordPro, with transposition and chords on/off; PDFs.

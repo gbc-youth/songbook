@@ -315,10 +315,23 @@
 }
 
 .sb-app-church-logo {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  flex: none;
   object-fit: contain;
   border-radius: 4px;
+}
+
+.sb-app-church-logo-mask {
+  display: inline-block;
+  border-radius: 0;
+  background: var(--text);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
 }
 
 .sb-app-church-name {

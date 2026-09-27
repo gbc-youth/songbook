@@ -7,6 +7,8 @@ import { BookIcon, SearchIcon, SettingsIcon } from './icons';
 interface LibraryProps {
   churchName: string;
   churchLogoUrl: string | null;
+  /** An SVG logo is drawn in the text colour, so a one-colour mark suits every theme. */
+  churchLogoIsSvg: boolean;
   tab: LibraryTab;
   onChangeTab: (tab: LibraryTab) => void;
   songs: SongMeta[];
@@ -65,7 +67,15 @@ export function Library(props: LibraryProps) {
       <header className="sb-app-library-header">
         <div className="sb-app-church">
           {props.churchLogoUrl ? (
-            <img src={props.churchLogoUrl} alt="" className="sb-app-church-logo" />
+            props.churchLogoIsSvg ? (
+              <span
+                className="sb-app-church-logo sb-app-church-logo-mask"
+                style={{ maskImage: `url(${props.churchLogoUrl})`, WebkitMaskImage: `url(${props.churchLogoUrl})` }}
+                aria-hidden="true"
+              />
+            ) : (
+              <img src={props.churchLogoUrl} alt="" className="sb-app-church-logo" />
+            )
           ) : (
             <BookIcon size={22} />
           )}

@@ -420,6 +420,7 @@ export function App() {
         <Library
           churchName={manifest.church.name}
           churchLogoUrl={churchLogoUrl}
+          churchLogoIsSvg={manifest.church.logo?.type === 'image/svg+xml'}
           tab={screen.name === 'library' ? screen.tab : 'songs'}
           onChangeTab={(tab) => switchScreen({ name: 'library', tab })}
           songs={visSongs}
