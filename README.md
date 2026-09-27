@@ -36,3 +36,7 @@ OneLicense, permission), license expiry, and team-only content.
 ## License
 The app's code is licensed under [GPL-2.0-only](LICENSE). Song content published
 by churches is their own and is not covered by this license.
+
+GPL-2.0 was chosen for one reason only: the app renders ChordPro with
+[ChordSheetJS](https://github.com/martijnversluis/ChordSheetJS), which is
+GPL-2.0-only. If that dependency is replaced, the license may be revisited.
