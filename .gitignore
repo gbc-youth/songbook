@@ -1,0 +1,15 @@
+node_modules
+dist
+dev-dist
+*.local
+.DS_Store
+test-results
+playwright-report
+tsconfig.tsbuildinfo
+
+# This repo is public. Songs you port go to your own private repo, never here;
+# only the public-domain hymns in demo/songs are committed.
+porting/inbox/*
+porting/songs/*
+!porting/inbox/.gitkeep
+!porting/songs/.gitkeep

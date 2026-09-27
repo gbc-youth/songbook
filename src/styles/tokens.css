@@ -1,0 +1,109 @@
+/* Design tokens. Quiet and bookish: the words are the page.
+   Every component styles itself from these; no raw colours elsewhere. */
+
+:root {
+  --font-serif: 'Source Serif 4 Variable', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Inter Variable', -apple-system, 'Segoe UI', system-ui, sans-serif;
+
+  /* Palette follows esv.org: cool slate greys on white, a soft teal for UI,
+     and ESV's red for chords. --bg is the reading surface, --surface the page
+     around it (bars, inputs). Themes: light (default), sepia, dark. */
+  --bg: #ffffff;
+  --surface: #fafafa;
+  --text: #424547;
+  --text-soft: #5e6266;
+  --muted: #9a9fa3;
+  --rule: #dce0e3;
+  --accent: #4f8ea5;       /* UI: links, active tab, toggles */
+  --accent-soft: #72abbf;
+  --chord: #ba444b;
+  --chord-soft: #c07a7e;   /* annotations like [*Riff] */
+  --focus: #72abbf66;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --measure: 36rem;        /* reading column width */
+  --lyric-size: 1.1875rem; /* scaled by --font-scale */
+  --font-scale: 1;
+  --radius: 6px;
+  --tap: 44px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not([data-theme='sepia']) {
+    --bg: #282a2b;
+    --surface: #202121;
+    --text: #d3d7da;
+    --text-soft: #b4b9bd;
+    --muted: #9a9fa3;
+    --rule: #424547;
+    --accent: #72abbf;
+    --accent-soft: #5b8fa1;
+    --chord: #e58b8f;
+    --chord-soft: #b98386;
+    --focus: #72abbf66;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='sepia'] {
+  --bg: #fffdf7;
+  --surface: #f5f1e4;
+  --text: #424547;
+  --text-soft: #5e6266;
+  --muted: #8f8367;
+  --rule: #ebe0c7;
+  --accent: #4f8ea5;
+  --accent-soft: #72abbf;
+  --chord: #ae4a4f;
+  --chord-soft: #b98a7c;
+  --focus: #72abbf66;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #282a2b;
+  --surface: #202121;
+  --text: #d3d7da;
+  --text-soft: #b4b9bd;
+  --muted: #9a9fa3;
+  --rule: #424547;
+  --accent: #72abbf;
+  --accent-soft: #5b8fa1;
+  --chord: #e58b8f;
+  --chord-soft: #b98386;
+  --focus: #72abbf66;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}

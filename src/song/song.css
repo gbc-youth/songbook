@@ -1,0 +1,110 @@
+/* src/song — chord sheet body. Quiet, bookish, ESV-app feel: no cards, shadows or boxes.
+   Colour and type come only from tokens.css. Class prefix: sb-song-. */
+
+.sb-song-body {
+  max-width: var(--measure);
+}
+
+.sb-song-section {
+  margin: 0 0 var(--space-6);
+}
+
+.sb-song-section:last-child {
+  margin-bottom: 0;
+}
+
+.sb-song-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 var(--space-2);
+}
+
+/* Comment cues: {c}, {comment}, {ci}, {comment_italic}, {comment_box} */
+.sb-song-comment {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0 0 var(--space-2);
+}
+
+.sb-song-comment--box {
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--rule);
+}
+
+/* Tab / grid / other literal content: monospaced, never reflowed. */
+.sb-song-literal {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0 0 var(--space-1);
+}
+
+/* Plain (chords-off) lyric line: clean poetry, no chord row, no gaps, no hyphens. */
+.sb-song-line--plain {
+  font-family: var(--font-serif);
+  font-size: calc(var(--lyric-size) * var(--font-scale));
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Chord-over-lyric line: a flex-wrap row of stacked chord/lyric pieces. */
+.sb-song-line--chords {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.sb-song-piece {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+.sb-song-chord {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8em;
+  line-height: 1.3;
+  min-height: 1.3em;
+  color: var(--chord);
+  white-space: nowrap;
+}
+
+.sb-song-chord--annotation {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--chord-soft);
+}
+
+.sb-song-lyric {
+  display: flex;
+  align-items: baseline;
+  font-family: var(--font-serif);
+  font-size: calc(var(--lyric-size) * var(--font-scale));
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+/* The hyphen rule: when a chord is wider than its lyric and the word continues into the next
+   piece, a small flex-grown filler line bridges the gap — CSS layout, not JS measurement. */
+.sb-song-hyphen-fill {
+  flex: 1 1 auto;
+  min-width: 0.4em;
+  align-self: center;
+  border-bottom: 1px solid var(--muted);
+  margin: 0 0.1em 0.5em;
+}

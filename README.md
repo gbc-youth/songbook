@@ -19,8 +19,21 @@ and no single platform carries every song a church sings.
   the app fetches only what changed.
 - **Admin publishing.** The church admin adds songs, PDFs, logo and defaults
   from the same app and publishes a new bundle version.
-- **Optional device-bound access.** Each device holds its own keypair; the admin
+- **Planned: device-bound access.** Each device holds its own keypair; the admin
   approves devices and can revoke one by rotating the content key.
+
+## Try it
+Open **https://gbc-youth.github.io/songbook/** and tap **Explore public hymns**.
+No account and no link needed. On a phone, add it to your home screen.
+
+Feedback is welcome in [GitHub Issues](https://github.com/gbc-youth/songbook/issues).
+
+## Porting your songs
+Songs arrive as PDFs, Ultimate Guitar printouts, Word files and photocopied
+hymnals. [Porting with Claude Code](docs/PORTING-WITH-CLAUDE.md) shows how to turn
+them into ChordPro with Claude Code: a ready rulebook in [`porting/`](porting/),
+a checker that reads each song the way the app does, and what a real worship
+team learned doing it every week.
 
 ## Scope
 - Worship teams first.
@@ -39,6 +52,17 @@ are the page.
 - Light mode warm off-white; dark mode a warm near-black with softened text,
   the same hue family rather than an inverted grey.
 - Settings stay out of sight until asked for.
+
+## Development
+```sh
+npm install
+npm run dev            # http://localhost:5173/songbook/
+npm test
+npm run build
+npm run demo           # rebuild the public hymns bundle from demo/songs
+npm run check-songs -- path/to/*.cho
+```
+Architecture and the bundle format: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Licensing
 The app is a tool; each church is responsible for holding licenses for the songs
