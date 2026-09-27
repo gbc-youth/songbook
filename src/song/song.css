@@ -99,6 +99,12 @@
   white-space: pre-wrap;
 }
 
+/* A chord after the last word has no lyric under it. Keep its lyric slot one line
+   tall, or the empty slot collapses and the chord drops onto the lyric line. */
+.sb-song-lyric:empty::before {
+  content: '\200b';
+}
+
 /* The hyphen rule: when a chord is wider than its lyric and the word continues into the next
    piece, a small flex-grown filler line bridges the gap — CSS layout, not JS measurement. */
 .sb-song-hyphen-fill {
