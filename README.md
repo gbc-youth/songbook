@@ -27,6 +27,19 @@ and no single platform carries every song a church sings.
 - Lyrics and chords in ChordPro, with transposition and chords on/off; PDFs.
 - A Progressive Web App: browser, Android, iOS and desktop from one codebase.
 
+## Design
+Minimal and quiet, in the spirit of the ESV Bible app and esv.org: the words
+are the page.
+- A readable serif for lyrics; a small, restrained sans for labels and UI.
+- Generous margins and line height; no cards, shadows or decoration.
+- Chords set apart by weight or a single muted accent, never competing with
+  the lyrics.
+- Section labels (Verse 1, Chorus) small and quiet, the way a Bible marks
+  headings and verse numbers.
+- Light mode warm off-white; dark mode a warm near-black with softened text,
+  the same hue family rather than an inverted grey.
+- Settings stay out of sight until asked for.
+
 ## Licensing
 The app is a tool; each church is responsible for holding licenses for the songs
 it publishes. The app makes compliance the easy path: copyright notice and
