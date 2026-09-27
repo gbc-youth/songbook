@@ -32,3 +32,7 @@ The app is a tool; each church is responsible for holding licenses for the songs
 it publishes. The app makes compliance the easy path: copyright notice and
 license number on every song, a license source per song (public domain, CCLI,
 OneLicense, permission), license expiry, and team-only content.
+
+## License
+The app's code is licensed under [GPL-2.0-only](LICENSE). Song content published
+by churches is their own and is not covered by this license.
